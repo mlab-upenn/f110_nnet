@@ -1,6 +1,6 @@
 import os, torch, cv2, pickle
 import numpy as np
-from f110_nnet.Data_Utils import Data_Utils
+from nnet.Data_Utils import Data_Utils
 from torch.utils.data import Dataset
 from torchvision import transforms, utils
 import pandas as pd
