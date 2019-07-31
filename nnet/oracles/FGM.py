@@ -1,6 +1,8 @@
 import cv2, time, math, sys
 import numpy as np
 
+__author__ = "Dhruv Karthik <dhruvkar@seas.upenn.edu>"
+
 class FGM(object):
     """
     Follow the Gap Method that approximates the best steering angle given a local lidar scan
