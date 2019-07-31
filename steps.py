@@ -102,8 +102,6 @@ session = {
         "sess_id": 0,
 	    "models_dir":'/home/nvidia/datasets/avfone/models/'
         ,"funclist":
-                [
-                    p(cropVertical, [100, 200]),
-                ]
+                []
     }
 }
