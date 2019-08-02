@@ -2,7 +2,7 @@ import os, cv2, math, sys, json, torch, pdb, random, pickle
 import numpy as np
 import matplotlib.pyplot as plt
 from nnet.Data_Utils import Data_Utils
-from steps import session
+from nnetsteps import session
 try:
    import moviepy.editor as mpy
    import pandas as pd 
@@ -114,7 +114,7 @@ class Metric_Visualizer(object):
     def frame_from_datadict(self, data_dict):
             img, steer = data_dict["img"], data_dict["steer"]
             img_frame = img.copy()
-            angle = steer["steering_angle"]
+            angle = steer["angle"]
             speed = steer["speed"]
             self.vis_frame(img_frame, angle, speed, 0, show_steer=True)
 
@@ -177,7 +177,7 @@ class Metric_Visualizer(object):
         {
             'steering_angle_velocity':float,
             'speed':float,
-            'steering_angle':float
+            'angle':float
         }
         return lidar frame
         """
@@ -197,7 +197,7 @@ class Metric_Visualizer(object):
         cv2.circle(lidar_frame, (cx, cy), int(0.4*100), (200, 0, 200), 1)
         
         #add steer visualizer
-        steering_angle = steer_dict["steering_angle"]
+        steering_angle = steer_dict["angle"]
         (steerx, steery) = (cx + 0.4*100*math.cos(-1.0 * steering_angle + math.pi/2.)), (cy - 0.4*100*math.sin(-1.0 * steering_angle + math.pi/2.))
         cv2.circle(lidar_frame, (int(steerx), int(steery)), 4, (0, 255, 0), -1)
         return lidar_frame

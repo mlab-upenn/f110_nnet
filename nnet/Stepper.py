@@ -7,7 +7,7 @@ except ImportError:
     print("WARNING:Cannot use STEPS fully without these packages")
 from nnet.Metric_Visualizer import Metric_Visualizer
 from nnet.Data_Utils import Data_Utils
-import steps
+import nnetsteps as steps
 
 class Stepper(object):
     """

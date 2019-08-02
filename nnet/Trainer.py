@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from torch.utils.data.sampler import SubsetRandomSampler
-from steps import session
+from nnetsteps import session
 import numpy as np
 from nnet.Metric_Visualizer import Metric_Visualizer
 from nnet.models import NVIDIA_ConvNet

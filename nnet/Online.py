@@ -2,7 +2,7 @@ import os, json, pdb, cv2, math, random, pickle, msgpack, sys
 import msgpack_numpy as m
 import numpy as np
 from nnet.Data_Utils import Data_Utils
-from steps import session
+from nnetsteps import session
 from nnet.oracles.FGM import FGM
 from nnet.Metric_Visualizer import Metric_Visualizer
 
