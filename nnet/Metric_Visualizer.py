@@ -128,7 +128,7 @@ class Metric_Visualizer(object):
             frame[0:lidar_rows, img_cols:frame_cols, :] = lidar_frame
             return frame
 
-    def vid_from_pklpath(self, pklpath, stepname, idx, show_steer=True, units='rad', live=True):
+    def vid_from_pklpath(self, pklpath, stepname, idx, show_steer=True, units='rad', live=True, wk=50):
         """
         Visualize a batch from pkl_path
         """
@@ -138,7 +138,7 @@ class Metric_Visualizer(object):
             frame = self.frame_from_datadict(data_dict)
             if live:
                 cv2.imshow('FrameBatch', frame)
-                cv2.waitKey(50) 
+                cv2.waitKey(wk) 
 
     def vid_from_online_dir(self, dpath, stepname, idx, show_steer=False, units='rad', live=False):
         """
