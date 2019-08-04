@@ -258,12 +258,16 @@ class Metric_Visualizer(object):
         return text
 
     def log_training(self, config, train_id, best_train_loss, best_valid_loss):
+        text = self.get_train_table(config, train_id, best_train_loss, best_valid_loss)
+        self.writer.add_text('Train Summary', text, global_step=0)
+    
+    def get_train_table(self, config, train_id, best_train_loss, best_valid_loss):
         final_dict = config
         final_dict["train_id"] = train_id
         final_dict["t_loss"] = best_train_loss
         final_dict["v_loss"] = best_valid_loss
         text = self.dict_to_table(final_dict)
-        self.writer.add_text('Train Summary', text, global_step=0)
+        return text
 
     def standard_log(self, datadir, folder, curr_step, global_step=0, units=''):
         """
